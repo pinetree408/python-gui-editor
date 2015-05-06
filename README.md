@@ -9,6 +9,7 @@ Spec
 ==========
 1) find - highlight
 2) change - find word and change it to list of '*'
+3) save - save all text to 'final.txt' when edit finished 
 
 License
 ==========
