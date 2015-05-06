@@ -13,4 +13,5 @@ Spec
 
 License
 ==========
-all directories and their contents are Copyright Lee Sang-Yoon. You may not reuse anything therein without my permission.
+all directories and their contents are Copyright Lee Sang-Yoon.
+You may not reuse anything therein without my permission.
