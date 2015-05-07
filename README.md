@@ -1,7 +1,7 @@
 # Python-Gui-Editor
 gui editor for text, html ... based on Python Tkinter
 
-classed based structure
+class based structure
 
 #This is the data for Python-Gui-Editor
 using Python Tkinter
