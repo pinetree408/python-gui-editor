@@ -2,9 +2,13 @@
 
 from Tkinter import *
 
-output_file = open('edit.txt', 'r')
-array = output_file.readlines()
-lines = ''.join(array)
+def ReadFile(filename):
+
+	input_file = open(filename, 'r')
+	array = input_file.readlines()
+	lines = ''.join(array)
+	
+	return lines
 
 root = Tk()
 
@@ -32,7 +36,7 @@ butt3.pack()
 fram3.pack(side=TOP)
 
 text = Text(root)
-text.insert('1.0', lines)
+text.insert('1.0', ReadFile('edit.txt'))
 text.pack(side=BOTTOM, fill=BOTH, expand=1)
 
 
