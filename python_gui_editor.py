@@ -118,7 +118,7 @@ class TextArea:
 
 		return self.text
 
-def excute(inputfile, outputfile):
+def execute(inputfile, outputfile):
 	
 	root = Tk()
 
@@ -131,5 +131,5 @@ def excute(inputfile, outputfile):
 
 if __name__ == "__main__":
 
-	excute('edit.txt', 'final.txt')
+	execute('edit.txt', 'final.txt')
 
