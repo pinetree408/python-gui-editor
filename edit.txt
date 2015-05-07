@@ -1,10 +1,10 @@
-1) test file for Editor1
-2) test file for Editor2
-3) test file for Editor3
-4) test file for Editor4
-5) test file for Editor5
-6) test file for Editor6
-7) test file for Editor7
-8) test file for Editor8
-9) test file for Editor9
-10) test file for Editor10 
+test file Python Gui Editor 1
+test file Python Gui Editor 2
+test file Python Gui Editor 3
+test file Python Gui Editor 4
+test file Python Gui Editor 5
+test file Python Gui Editor 6
+test file Python Gui Editor 7
+test file Python Gui Editor 8
+test file Python Gui Editor 9
+test file Python Gui Editor 10
