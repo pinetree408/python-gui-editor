@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*- 
 
 from Tkinter import *
-#import Tkinter as tk
 
 def ReadFile(filename):
 
@@ -10,7 +9,6 @@ def ReadFile(filename):
 	lines = ''.join(array)
 	
 	return lines
-
 
 class FindButton:
 	#Find Button
