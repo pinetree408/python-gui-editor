@@ -122,6 +122,7 @@ class TextArea:
 def execute(inputfile, outputfile):
 	
 	root = Tk()
+	root.title("Python Gui Editor")
 
 	text = TextArea(root, inputfile).return_text()
 	FindButton(root, text)
