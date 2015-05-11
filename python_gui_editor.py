@@ -34,6 +34,7 @@ class FindButton:
 
 	    self.text.tag_remove('found', '1.0', END)
 	    s = self.edit.get()
+	    count = 0
 
 	    if s:
 		idx = '1.0'
@@ -43,7 +44,9 @@ class FindButton:
 		    lastidx = '%s+%dc' % (idx, len(s))
 		    self.text.tag_add('found', idx, lastidx)
 		    idx = lastidx
+		    count = count + 1
 		self.text.tag_config('found', foreground='red', underline=1)
+
 	    self.edit.focus_set()
 
 class ChangeButton:
