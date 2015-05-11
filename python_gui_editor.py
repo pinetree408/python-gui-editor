@@ -17,7 +17,7 @@ class FindButton:
 		self.fram = Frame(master)
 		self.fram.pack(side=TOP)
 
-		self.label = Label(self.fram,text='Text to find:')
+	        self.label = Label(self.fram,text='Text to find:')
 		self.label.pack(side=LEFT)
 		
 		self.edit = Entry(self.fram)
@@ -25,29 +25,34 @@ class FindButton:
 		self.edit.focus_set()
 		
 		self.butt = Button(self.fram, text='Find')
-		self.butt.pack(side=RIGHT)
+		self.butt.pack(side=LEFT)
 		self.butt.config(command=self.find)
 
+		self.count = 0
+		self.countlabel = Label(self.fram,text='Count: ' + str(self.count))
+		self.countlabel.pack(side=RIGHT)
+		
 		self.text = text
 
 	def find(self):
+		
+		self.text.tag_remove('found', '1.0', END)
+		s = self.edit.get()
+		
+		if s:
+			idx = '1.0'
+			while 1:
+			    	idx = self.text.search(s, idx, nocase=1, stopindex=END)
+			    	if not idx: break
+			    	lastidx = '%s+%dc' % (idx, len(s))
+			    	self.text.tag_add('found', idx, lastidx)
+			    	idx = lastidx
+			    	self.count = self.count + 1
+			self.text.tag_config('found', foreground='red', underline=1)
 
-	    self.text.tag_remove('found', '1.0', END)
-	    s = self.edit.get()
-	    count = 0
-
-	    if s:
-		idx = '1.0'
-		while 1:
-		    idx = self.text.search(s, idx, nocase=1, stopindex=END)
-		    if not idx: break
-		    lastidx = '%s+%dc' % (idx, len(s))
-		    self.text.tag_add('found', idx, lastidx)
-		    idx = lastidx
-		    count = count + 1
-		self.text.tag_config('found', foreground='red', underline=1)
-
-	    self.edit.focus_set()
+		self.countlabel["text"] = 'Count: ' + str(self.count)
+		self.count = 0
+	    	self.edit.focus_set()
 
 class ChangeButton:
 	#Chnage Button
