@@ -7,7 +7,7 @@ class based structure
 using Python Tkinter
 
 #Spec
-1. Find - highlight
+1. Find - highlight and count
 2. Change - find word and change it to list of *
 3. Save - save all text to 'final.txt' when edit finished 
 

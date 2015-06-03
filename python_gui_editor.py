@@ -2,13 +2,45 @@
 
 from Tkinter import *
 
-def ReadFile(filename):
+import tkFileDialog
 
-	input_file = open(filename, 'r')
-	array = input_file.readlines()
-	lines = ''.join(array)
+def ReadFile(filename):
 	
+	if filename != '':
+		input_file = open(filename, 'r')
+		array = input_file.readlines()
+		lines = ''.join(array)
+	else:
+		lines = ''
+
 	return lines
+
+class OpenFileButton:
+
+	def __init__(self, master):
+		
+		self.fram = Frame(master)
+		self.fram.pack(side=TOP)
+
+		self.file_opt = options = {}
+		options['defaultextension'] = '.txt'
+		options['filetypes'] = [('all files', '.*'), ('text files', '.txt')]
+		options['initialdir'] = 'C:\\'
+		options['initialfile'] = 'myfile.txt'
+		options['parent'] = master
+		options['title'] = 'This is a title'
+
+		self.master = master
+		self.openedfilename = ''
+
+	def openfile(self):
+
+		self.openedfilename = tkFileDialog.askopenfilename(**self.file_opt)
+		
+		text = TextArea(self.master, self.openedfilename).return_text()
+		FindButton(self.master, text)
+		ChangeButton(self.master, text)
+		SaveButton(self.master, text, 'final.txt')
 
 class FindButton:
 	#Find Button
@@ -124,6 +156,35 @@ class TextArea:
 
 		return self.text
 
+class AskArea:
+
+	def __init__(self, master):
+
+		self.fram = Frame(master)
+		self.fram.pack(side=TOP)
+
+		self.newbutt = Button(self.fram, text='Open New File')
+		self.newbutt.pack()
+		self.newbutt.config(command=self.new)
+	
+		self.oldbutt = Button(self.fram, text='Open Old File')
+		self.oldbutt.pack()
+		self.oldbutt.config(command=self.old)
+
+		self.master = master
+
+	def old(self):
+
+		self.master.destroy()
+		root = Tk()
+		root.title("Python Gui Editor")
+		OpenFileButton(root).openfile()
+
+	def new(self):
+
+		self.master.destroy()
+		execute('test.txt', 'final.txt')
+
 def execute(inputfile, outputfile):
 	
 	root = Tk()
@@ -138,5 +199,11 @@ def execute(inputfile, outputfile):
 
 if __name__ == "__main__":
 
-	execute('edit.txt', 'final.txt')
+	root = Tk()
+	root.title("Which one do you open?")
+	root.minsize(300,50)
+	
+	AskArea(root)
+
+	root.mainloop()
 
