@@ -167,7 +167,7 @@ class AskArea:
 		self.newbutt.pack()
 		self.newbutt.config(command=self.new)
 	
-		self.oldbutt = Button(self.fram, text='Open Old File')
+		self.oldbutt = Button(self.fram, text='Open Exist File')
 		self.oldbutt.pack()
 		self.oldbutt.config(command=self.old)
 
@@ -183,7 +183,7 @@ class AskArea:
 	def new(self):
 
 		self.master.destroy()
-		execute('test.txt', 'final.txt')
+		execute('newIn.txt', 'newOut.txt')
 
 def execute(inputfile, outputfile):
 	

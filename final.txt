@@ -1,11 +1,11 @@
-test file Python *** Editor 1
-test file Python *** Editor 2
-test file Python *** Editor 3
-test file Python *** Editor 4
-test file Python *** Editor 5
-test file Python *** Editor 6
-test file Python *** Editor 7
-test file Python *** Editor 8
-test file Python *** Editor 9
-test file Python *** Editor 10
+test file Python Gui Editor 1
+test file Python Gui Editor 2
+test file Python Gui Editor 3
+test file Python Gui Editor 4
+test file Python Gui Editor 5
+test file Python Gui Editor 6
+test file Python Gui Editor 7
+test file Python Gui Editor 8
+test file Python Gui Editor 9
+test file Python Gui Editor 10
 
